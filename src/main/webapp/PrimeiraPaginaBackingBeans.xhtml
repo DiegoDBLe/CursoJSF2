@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Primeira Pagina JSF</title>
+</h:head>
+<h:body>
+	<h1>Primeira Pagina JSF Backing Beans</h1>
+
+	<h:form>
+			Seu Nome: 
+			<h:inputText binding="#{olaMundoBeckingBeans.campo}"/>
+
+		<h:commandButton value="Enviar"
+		 binding="#{olaMundoBeckingBeans.botao}"
+		 action="#{olaMundoBeckingBeans.testar}" />
+		 
+		 <br/>
+		<h:commandButton value="Voltar" action="CasaProdutos?face-redirect=true"/>
+
+	</h:form>
+</h:body>
+</html>
