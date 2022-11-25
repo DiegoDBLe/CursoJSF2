@@ -12,41 +12,52 @@
 	<h1>Gestão de Produtos</h1>
 
 	<h:form>
-	
-			<h:commandLink value="Ajuda sobre esta tela" action="#{gestaoProdutosBean.retornarPagina}">
-				<f:actionListener binding="#{registroCliqueBotaoListener}"/>
-			</h:commandLink>
-			<br/><br/>
+
+		<h:commandLink value="Ajuda sobre esta tela"
+			action="#{gestaoProdutosBean.retornarPagina}">
+			<f:actionListener binding="#{registroCliqueBotaoListener}" />
+		</h:commandLink>
+		<br />
+		<br />
 			
 			Nome: 
-			<h:inputText value="#{gestaoProdutosBean.produto.nome}"/>
-			<br/>
+			<h:inputText value="#{gestaoProdutosBean.produto.nome}" />
+		<br />
 			
 			Fabricante: 
-			<h:inputText value="#{gestaoProdutosBean.produto.fabricante}"/>
-			<br/>
+			<h:inputText value="#{gestaoProdutosBean.produto.fabricante}" />
+		<br />
 			
 			Categoria: 
-			<h:inputText value="#{gestaoProdutosBean.produto.categoria}"/>
-			<br/>
+			<h:inputText value="#{gestaoProdutosBean.produto.categoria}" />
+		<br />
 
-			<h:commandButton value="Incluir" action="#{gestaoProdutosBean.incluir}"
-				actionListener="#{gestaoProdutosBean.verificarInclusao}">
-				<f:actionListener binding="#{registroCliqueBotaoListener}"/>
-			</h:commandButton>	
+		<h:commandButton value="Incluir"
+			action="#{gestaoProdutosBean.incluir}"
+			actionListener="#{gestaoProdutosBean.verificarInclusao}">
+			<f:actionListener binding="#{registroCliqueBotaoListener}" />
+		</h:commandButton>
+
 	</h:form>
-	
-		<h:form>
-			<ol>
-				<ui:repeat var="item" value="#{gestaoProdutosBean.produtos}">
-					<li>
-						#{item.nome} - #{item.fabricante} - #{item.categoria}
-						<h:commandButton value="Excluir" action="#{gestaoProdutosBean.excluir}">
-							<f:setPropertyActionListener value="#{item}" target="#{gestaoProdutosBean.produtoSelecionado}"/>
-						</h:commandButton>
-					</li>
-				</ui:repeat>	
-			</ol>
-		</h:form>
-	</h:body>
+	<br />
+	<h:form>
+		Pesquisa por Nome:
+		<h:inputText value="#{gestaoProdutosBean.nomePesquisa}"
+			valueChangeListener="#{gestaoProdutosBean.nomePesquisaAlterado}"
+			onchange="submit()"/>
+	</h:form>
+
+	<h:form>
+		<ol>
+			<ui:repeat var="item" value="#{gestaoProdutosBean.produtosFiltrados}">
+				<li>#{item.nome} - #{item.fabricante} - #{item.categoria} <h:commandButton
+						value="Excluir" action="#{gestaoProdutosBean.excluir}">
+						<f:setPropertyActionListener value="#{item}"
+							target="#{gestaoProdutosBean.produtoSelecionado}" />
+					</h:commandButton>
+				</li>
+			</ui:repeat>
+		</ol>
+	</h:form>
+</h:body>
 </html>
