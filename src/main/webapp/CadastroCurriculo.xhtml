@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Entrada e Saida de Texto e Imagem</title>
+</h:head>
+<h:body>
+	<h1>Entrada e Saida de Texto e Imagem</h1>
+
+	<h:form id="formVaga">
+	
+		<h:graphicImage value="/imagens/imgJava.png"/>
+		<br/>
+		
+		<h:outputText value="Cadastro de Curriculo para a vaga #{cadastroCurriculoBean.vaga}"
+			style="font-weight: bold; font-size: 22px" />
+		<br />
+
+		<h:outputFormat value="Vaga: {0} - Cargo: {1}" style="color:red">
+			<f:param value="#{cadastroCurriculoBean.vaga}" />
+			<f:param value="#{cadastroCurriculoBean.cargo}" />
+		</h:outputFormat>
+		<br /><br />
+
+		<h:outputLabel value="Email: " for="email"/><br />
+		<h:inputText size="60" id="email" />
+		<br /><br />
+
+		<h:outputLabel value="Senha: " for="senha"/><br />
+		<h:inputSecret size="40" id="senha"/>
+		<br /><br />
+
+		<h:outputLabel value="Qualificações: " /><br />
+		<h:inputTextarea cols="60" rows="5"/>
+		<br />
+
+		<h:commandButton value="Cadastrar" />
+	</h:form>
+</h:body>
+</html>

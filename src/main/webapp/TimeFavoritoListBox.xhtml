@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Time Favorito</title>
+</h:head>
+<h:body>
+
+	<h:form id="formularioTime">
+		<h1>Escolha seu time favorito</h1>
+
+		<h:selectOneListbox id="time" value="#{timeFavoritoBean.time}" size="3">
+			<f:selectItem itemValue="Corinthians" itemLabel="Timão"/>
+			<f:selectItem itemValue="Flamengo" itemLabel="Mengão"/>
+			<f:selectItem itemValue="Palmeiras" itemLabel="Porco"/>
+			<f:selectItem itemValue="Santos" itemLabel="Peixão"/>
+			<f:selectItem itemValue="São Paulo" itemLabel="Pó de arroz"/>
+			<f:selectItem itemValue="Vasco" itemLabel="Vascão"/>
+			<f:selectItem itemValue="Fortaleza" itemLabel="Leão"/>
+		</h:selectOneListbox>
+		
+		<h:commandButton value="Escolher" action="#{timeFavoritoBean.escolher}"/>
+		
+		<br/><br/>
+		
+		<div>
+			<h:outputText value="#{timeFavoritoBean.time}" rendered="#{not empty timeFavoritoBean.time}"
+			style="background-color: red; color: #fff; font-size: 32px; font-family: Arial"/>
+		</div>
+	</h:form>
+</h:body>
+</html>
