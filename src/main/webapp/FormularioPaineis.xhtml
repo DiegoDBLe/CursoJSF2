@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Botões e Links</title>
+</h:head>
+<h:body>
+	<h1>Botões e Links</h1>
+	<h:form id="formulario">
+		
+		<h:panelGrid columns="2">
+			<f:facet name="header">
+				Cadastro de novo usuário do sistema
+			</f:facet>
+			
+			<h:outputLabel value="Nome Completo:"/>
+			<h:panelGroup>
+				<h:inputText size="50"/>
+				<h:graphicImage value="/imagens/ajuda.png"/>
+			</h:panelGroup>
+			
+			<h:outputLabel value="Email:"/>
+			<h:inputText size="50"/>
+			
+			<h:outputLabel value="Senha: "/>
+			<h:inputSecret size="50"/>
+			
+			<h:outputLabel/>
+			<h:commandButton value="Cadastrar"/>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>
