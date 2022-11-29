@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Botões e Links</title>
+</h:head>
+<h:body>
+	<h1>Botões e Links</h1>
+	<h:form id="formulario">
+		Nome: 
+		<h:inputText value="#{formularioBean.nome}"/>
+		<br/>
+		
+		<!--  
+		<h:commandButton value="Enviar" action="Resultado"/>
+		-->
+		<h:commandLink value="Enviar" action="Resultado"/>
+		<h:commandButton value="Limpar" type="reset"/>
+		
+		<br/><br/><br/><br/>
+		
+		<h:outputLink value="http://www.google.com.br">Google
+			<f:param name="q" value="algaWorks" />
+		</h:outputLink>
+		<br/>
+		<h:link value="Ir para resultado" outcome="Resultado"/>
+	</h:form>
+</h:body>
+</html>
