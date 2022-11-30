@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Componentes dentro das cedulas da tabela</title>
+</h:head>
+<h:body>
+	<h1>Componentes dentro das cedulas da tabela</h1>
+	<h:form id="formulario">
+		<h:commandButton value="Consultar" action="#{consultaClienteBean.consultar}"/>
+		
+		<h:dataTable value="#{consultaClienteBean.clientes}" var="item" border="1"
+				rendered="#{not empty consultaClienteBean.clientes}">
+			
+			<h:column>
+				<f:facet name="header">
+					Código
+				</f:facet>
+				
+				<h:inputText value="#{item.codigo}" size="3"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+					Nome
+				</f:facet>
+				
+				<h:outputLink value="http://www.google.com.br/search?q=#{item.nome}">
+					<h:outputText value="#{item.nome}"/>
+				</h:outputLink>
+			</h:column>
+		
+			<h:column>
+				<f:facet name="header">
+					Cidade
+				</f:facet>
+				
+				<h:outputText value="#{item.cidade}"/>
+				<h:outputLink value="http://www.google.com.br/search?tbm=isch&amp;q=#{item.cidade}">
+					<h:graphicImage value="/imagens/ajuda.png"/>
+				</h:outputLink>
+			</h:column>
+		
+		</h:dataTable>
+		
+		<h:commandButton value="Salvar" action="#{consultaClienteBean.salvar}"
+			rendered="#{not empty consultaClienteBean.clientes}"/>
+	</h:form>
+</h:body>
+</html>
