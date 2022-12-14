@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+.tabela {
+	font-family: Arial;
+	font-size: 12px;
+}
+
+.cabecalho {
+	background-color: black;
+	color: white;
+}
+
+.linha1 {
+	background-color: #c9c9c9;
+}
+
+.linha2 {
+	background-color: yellow;
+}
+
+.coluna1 {
+	background-color: blue;
+}

@@ -7,6 +7,9 @@
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Componentes dentro das cedulas da tabela</title>
+	
+	<h:outputStylesheet library="css" name="tabela.css"/>
+	<h:outputScript library="js" name="tabela.js"/>
 </h:head>
 <h:body>
 	<h1>Componentes dentro das cedulas da tabela</h1>
@@ -14,14 +17,16 @@
 		<h:commandButton value="Consultar" action="#{consultaClienteBean.consultar}"/>
 		
 		<h:dataTable value="#{consultaClienteBean.clientes}" var="item" border="1"
-				rendered="#{not empty consultaClienteBean.clientes}">
+				rendered="#{not empty consultaClienteBean.clientes}"
+				width="500px" styleClass="tabela" headerClass="cabecalho"
+				rowClasses="linha1, linha2" columnClasses="coluna1">
 			
 			<h:column>
 				<f:facet name="header">
 					Código
 				</f:facet>
 				
-				<h:inputText value="#{item.codigo}" size="3"/>
+				<h:inputText value="#{item.codigo}" size="2"/>
 			</h:column>
 			
 			<h:column>
@@ -41,7 +46,8 @@
 				
 				<h:outputText value="#{item.cidade}"/>
 				<h:outputLink value="http://www.google.com.br/search?tbm=isch&amp;q=#{item.cidade}">
-					<h:graphicImage value="/imagens/ajuda.png"/>
+					<h:graphicImage value="/imagens/ajuda.png"
+						onclick="selecionarCidade('#{item.cidade}')"/>
 				</h:outputLink>
 			</h:column>
 		
