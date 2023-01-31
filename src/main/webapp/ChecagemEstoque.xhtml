@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Novo lançamento</title>
+
+	<!--  <h:outputStylesheet library="css" name="sistema2.css"/>-->
+</h:head>
+<h:body>
+
+	<h1>Estoque</h1>
+
+	<h:form id="frm">
+		<h:panelGrid columns="2" styleClass="form-grid"
+			columnClasses="label, campo">
+			<h:panelGroup>
+				<h:inputText id="codigoProduto" value="#{estoqueBean.itemEstoque.codigoProduto}"/>
+				<h:message for="codigoProduto" showSummary="true" showDetail="false"/>
+			</h:panelGroup>
+
+			<h:outputLabel value="Descrição" />
+			<h:inputText id="descicao" value="#{estoqueBean.itemEstoque.descricao}"/>
+			
+			<h:outputLabel value="Quantidade"/>
+			<h:panelGroup>
+				<h:inputText id="quantidade" value="#{estoqueBean.itemEstoque.quantidade}"/>
+				<h:message for="quantidade" showSummary="true" showDetail="false"/>
+			</h:panelGroup>
+			
+			<h:outputLabel value="Valor unitário"/>
+			<h:panelGroup>
+				<h:inputText id="valorUnitario" value="#{estoqueBean.itemEstoque.valorUnitario}"/>
+				<h:message for="valorUnitario" showSummary="true" showDetail="false"/>
+			</h:panelGroup>
+			
+			<h:outputLabel value="Data da checagem"/>
+			<h:panelGroup>
+				<h:inputText id="dataChecagem" value="#{estoqueBean.itemEstoque.dataChecagem}"/>
+				<h:message for="dataChecagem" showSummary="true" showDetail="false"/>
+			</h:panelGroup>
+			
+			<h:outputLabel/>
+			<h:commandButton value="Incluir" action="#{estoqueBean.incluir}"/>
+		</h:panelGrid>
+		
+		<h:dataTable var="item" value="#{estoqueBean.itensEstoque}" border="1">
+			<h:column>
+				<f:facet name="header">Código do Produto</f:facet>
+				<h:outputText value="#{item.codigoProduto}"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Descrição</f:facet>
+				<h:outputText value="#{item.descricao}"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Quantidade</f:facet>
+				<h:outputText value="#{item.quantidade}"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Valor unitário</f:facet>
+				<h:outputText value="#{item.valorUnitario}"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Data da checagem</f:facet>
+				<h:outputText value="#{item.dataChecagem}"/>
+			</h:column>
+		</h:dataTable>
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,29 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="meetapp:war exploded">
+    <output-path>$PROJECT_DIR$/target/meetapp</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>meetapp</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="meetapp" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.glassfish:javax.faces:2.2.10" />
+          <element id="library" level="project" name="Maven: org.jboss.weld.servlet:weld-servlet:2.2.0.Final" />
+          <element id="library" level="project" name="Maven: org.jboss:jandex:1.2.3.Final" />
+          <element id="library" level="project" name="Maven: org.primefaces:primefaces:7.0" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/meetapp/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="meetapp/web/Web" />
+    </root>
+  </artifact>
+</component>
