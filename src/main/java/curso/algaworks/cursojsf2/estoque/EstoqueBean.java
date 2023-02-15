@@ -1,5 +1,7 @@
 package curso.algaworks.cursojsf2.estoque;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +10,7 @@ import javax.faces.bean.ViewScoped;
 
 @ManagedBean
 @ViewScoped
+@Getter
 public class EstoqueBean {
 	
 	private ItemEstoque itemEstoque = new ItemEstoque();
@@ -16,14 +19,6 @@ public class EstoqueBean {
 	public void incluir() {
 		this.itensEstoque.add(itemEstoque);
 		this.itemEstoque = new ItemEstoque();
-	}
-	
-	public ItemEstoque getItemEstoque() {
-		return itemEstoque;
-	}
-	
-	public List<ItemEstoque> getItensEstoque() {
-		return itensEstoque;
 	}
 
 }

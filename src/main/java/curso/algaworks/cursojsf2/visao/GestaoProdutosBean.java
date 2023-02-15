@@ -10,12 +10,16 @@ import javax.faces.event.ActionEvent;
 import javax.faces.event.ValueChangeEvent;
 
 import curso.algaworks.cursojsf2.dominio.Produto;
+import lombok.Getter;
+import lombok.Setter;
 
 @ManagedBean
 //@RequestScoped
 //@ViewScoped
 @SessionScoped
 //@ApplicationScoped
+@Getter
+@Setter
 public class GestaoProdutosBean {
 
 	private List<Produto> produtos;
@@ -67,38 +71,12 @@ public class GestaoProdutosBean {
 	public void finalizar() {
 		System.out.println("Finalizando Bean!");
 	}
-	
-	public Produto getProduto() {
-		return produto;
-	}
-	
-	public List<Produto> getProdutos() {
-		return produtos;
-	}
-	
+
 	public String retornarPagina() {
 		if(this.produtos.isEmpty()) {
 			return "PrimeiraPagina?face-redirect=true";
 		}else {
 			return "PrimeiraPaginaBackingBeans?face-redirect=true";
 		}
-	}
-	
-	public Produto getProdutoSelecionado() {
-		return produtoSelecionado;
-	}
-	public void setProdutoSelecionado(Produto produtoSelecionado) {
-		this.produtoSelecionado = produtoSelecionado;
-	}
-	
-	public String getNomePesquisa() {
-		return nomePesquisa;
-	}
-	public void setNomePesquisa(String nomePesquisa) {
-		this.nomePesquisa = nomePesquisa;
-	}
-	
-	public List<Produto> getProdutosFiltrados() {
-		return produtosFiltrados;
 	}
 }

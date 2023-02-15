@@ -1,8 +1,13 @@
 package curso.algaworks.cursojsf2.estoque;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
+@Setter
+@Getter
 public class ItemEstoque {
 
 	private Integer codigoProduto;
@@ -10,37 +15,5 @@ public class ItemEstoque {
 	private Short quantidade;
 	private BigDecimal valorUnitario;
 	private Date dataChecagem;
-	public Integer getCodigoProduto() {
-		return codigoProduto;
-	}
-	public void setCodigoProduto(Integer codigoProduto) {
-		this.codigoProduto = codigoProduto;
-	}
-	public String getDescricao() {
-		return descricao;
-	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-	public Short getQuantidade() {
-		return quantidade;
-	}
-	public void setQuantidade(Short quantidade) {
-		this.quantidade = quantidade;
-	}
-	public BigDecimal getValorUnitario() {
-		return valorUnitario;
-	}
-	public void setValorUnitario(BigDecimal valorUnitario) {
-		this.valorUnitario = valorUnitario;
-	}
-	public Date getDataChecagem() {
-		return dataChecagem;
-	}
-	public void setDataChecagem(Date dataChecagem) {
-		this.dataChecagem = dataChecagem;
-	}
-	
-	
-	
+
 }

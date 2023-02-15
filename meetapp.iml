@@ -44,5 +44,6 @@
     <orderEntry type="library" name="Maven: org.jboss.weld.servlet:weld-servlet:2.2.0.Final" level="project" />
     <orderEntry type="library" name="Maven: org.jboss:jandex:1.2.3.Final" level="project" />
     <orderEntry type="library" name="Maven: org.primefaces:primefaces:7.0" level="project" />
+    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.24" level="project" />
   </component>
 </module>
